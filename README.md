@@ -775,3 +775,40 @@ flowchart LR
 `GREEN` присваивается только воспроизводимым утверждениям. Исследовательский код, диаграмма или заявленная метрика без проверяемого artifact trail остаются `R&D/CANDIDATE`.
 
 <!-- SYNERGY-FEDERATION-PASSPORT:END -->
+
+---
+
+# 🧬 Глубокий технический паспорт AI Language Pro
+
+## Два разных слоя внутри repo
+
+1. **AI Language Pro package** — repository-aware coding agent + semantic traceability + experimental compiler;
+2. **NEXUS benchmark lineage** — freeze manifests/blind packs R7.x, исторически сохранённые рядом.
+
+```mermaid
+flowchart LR
+    REQ[REQ-* requirements] --> GRAPH[Semantic/repo graph]
+    GRAPH --> AGENT[Coding agent]
+    AGENT --> CHANGE[Change graph]
+    CHANGE --> TEST[Validation commands]
+    TEST --> TRACE[Machine-readable trace]
+
+    NEX[NEXUS blind lineage] -. separate provenance .-> TRACE
+```
+
+## Почему это разделение важно
+
+Package quality, compiler correctness и NEXUS reasoning benchmarks — разные claim surfaces. Успех blind benchmark не доказывает безопасность coding-agent edits; passing package tests не доказывают reasoning generalization.
+
+## Реальные implementation anchors
+
+- `src/ai_language/agent.py`;
+- `src/ai_language/semantic_trace.py`;
+- `src/ai_language/compiler.py`;
+- `tests/test_agent.py`;
+- `tests/test_semantic_trace.py`;
+- `.github/workflows/ci.yml`.
+
+## Следующий рубеж
+
+typed edit contract → sandboxed command policy → mutation provenance → diff/test binding → artifact hash → handoff to `synergy_ai_coder` review gate.
