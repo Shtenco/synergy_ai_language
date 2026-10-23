@@ -1,3 +1,43 @@
+<div align="center">
+
+<img src="assets/readme/hero.svg" alt="AI LANGUAGE PRO vector hero" width="100%"/>
+
+**Repository-aware coding agent, semantic trace and experimental compiler**
+
+[Overview](#verified-overview) · [Architecture](#architecture-map) · [Evidence](#evidence-boundary) · [Documentation](#original-technical-documentation)
+
+</div>
+
+## Verified overview
+
+Repository-aware coding agent, semantic trace and experimental compiler. Main project components: `src/ai_language/; tests/`. This README describes source code and research rather than independently confirmed production service.
+
+## Architecture map
+
+```mermaid
+flowchart LR
+A[Source and configuration] --> B[Implemented project modules]
+B --> C[Output or presentation]
+C --> D[Independent validation and review]
+```
+
+The diagram represents conceptual responsibilities, not a confirmed production integration.
+
+## Evidence boundary
+
+> The .ailang compiler remains experimental; source and CI do not establish general-purpose compiler correctness.
+
+| Domain | Interpretation |
+|:--|:--|
+| Repository files | Inspectable implementation artifacts |
+| Test and CI results | Require separate current run evidence |
+| Performance metrics | Require timestamped and reproducible evaluation |
+| Production claims | Not established solely by documentation |
+
+## Original technical documentation
+
+---
+
 # AI Language Pro
 
 [![PyPI](https://img.shields.io/pypi/v/ai-language-pro)](https://pypi.org/project/ai-language-pro/)
